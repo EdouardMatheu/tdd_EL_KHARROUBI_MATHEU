@@ -1,3 +1,5 @@
+import math
+
 def max_int(a,b):
 	if a < b :
 		return b
@@ -25,3 +27,11 @@ def median_int(l):
 		return l[(len(l)//2)-1]
 	else: 	
 		return l[len(l)//2]
+
+def std_dev(l):
+	mu = mean_int(l)
+	s = 0.0
+	for e in l :
+		s += (e - mu)*(e - mu)
+	s /= len(l)
+	return math.sqrt(s)
