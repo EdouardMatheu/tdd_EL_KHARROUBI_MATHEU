@@ -37,9 +37,12 @@ def std_dev(l):
 	return math.sqrt(s)
 
 def is_geo_progression(l):
-	for i in range(1,len(l)):
-		if (l[i]%l[i-1] != 0):
+	temp1 = l[1]%l[0]
+	for i in range(2,len(l)):
+		temp = l[i]%l[i-1]
+		if (temp != temp1):
 			return False 
+		temp1 = temp
 	return True
 
 def is_ari_progression(l):
@@ -50,3 +53,19 @@ def is_ari_progression(l):
 			return False 
 		temp1=temp
 	return True
+
+def geo_progression(n,l):
+	temp1 = l[1]%l[0]
+	for i in range(2,len(l)):
+		temp = l[i]%l[i-1]
+		if (temp != temp1):
+			return False 
+		temp1 = temp
+	temp1 = l[-1]//l[-2]
+	temp = l[-1]*temp1
+	l2 = []
+	l2.append(temp)
+	for i in range(n-1):
+		u = l2[i] * temp1
+		l2.append(u)
+	return True, l2
