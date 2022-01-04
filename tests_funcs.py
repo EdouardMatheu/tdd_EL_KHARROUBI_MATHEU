@@ -21,5 +21,13 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual(funcs.mean_int([-2,-1,0,1,2,3]),0.5)
 		self.assertEqual(funcs.mean_int([0,0,0]),0.0)
 
+	def test_median_int(self):
+		self.assertEqual(funcs.median_int([1,2,5,4,3]),3)
+		self.assertEqual(funcs.median_int([-2,-1,0,1,2]),0)
+		self.assertEqual(funcs.median_int([-2,-1,0,1,2,3,4]),1)
+		self.assertEqual(funcs.median_int([0,1,2,3]),1)
+		self.assertEqual(funcs.median_int([0,0,0,0]),0)
+		self.assertEqual(funcs.median_int([]),None)
+
 if __name__ == '__main__':
 	unittest.main()
