@@ -41,3 +41,12 @@ def is_geo_progression(l):
 		if (l[i]%l[i-1] != 0):
 			return False 
 	return True
+
+def is_ari_progression(l):
+	temp1 = l[1]-l[0]
+	for i in range(2,len(l)):
+		temp = l[i]-l[i-1]
+		if ( temp != temp1):
+			return False 
+		temp1=temp
+	return True
