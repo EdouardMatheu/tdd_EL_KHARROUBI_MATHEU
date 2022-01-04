@@ -15,5 +15,11 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual(funcs.min_int(-1,2),-1)
 		self.assertEqual(funcs.min_int(0,0),0)
 
+	def test_mean_int(self):
+		self.assertEqual(funcs.mean_int([1,2,3,4,5]),3.0)
+		self.assertEqual(funcs.mean_int([-2,-1,0,1,2]),0.0)
+		self.assertEqual(funcs.mean_int([-2,-1,0,1,2,3]),0.5)
+		self.assertEqual(funcs.mean_int([0,0,0]),0.0)
+
 if __name__ == '__main__':
 	unittest.main()
