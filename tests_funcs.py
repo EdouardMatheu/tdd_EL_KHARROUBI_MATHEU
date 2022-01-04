@@ -48,5 +48,13 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual(funcs.is_ari_progression([-2,-1,0,1,2,3,4]),True)
 		self.assertEqual(funcs.is_ari_progression([1,2,4,8,16]),False)
 
+	def test_geo_progression(self):
+		self.assertEqual(funcs.geo_progression(0,[1,2,5,4,3]),False)
+		self.assertEqual(funcs.geo_progression(0,[-2,-1,0,1,2]),False )
+		self.assertEqual(funcs.geo_progression(0,[-2,-1,0,1,2,3,4]),False)
+		self.assertEqual(funcs.geo_progression(3,[1,2,4,8,16]),(True,[32,64,128]))
+		self.assertEqual(funcs.geo_progression(3,[1,7,2,9,16]),False)
+
+
 if __name__ == '__main__':
 	unittest.main()
