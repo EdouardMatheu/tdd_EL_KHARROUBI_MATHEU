@@ -16,3 +16,12 @@ def mean_int(l):
 		s += l[i]
 	s /= len(l)
 	return s
+
+def median_int(l):
+	l.sort()
+	if len(l)==0 : 
+		return None
+	elif len(l)%2==0:
+		return l[(len(l)//2)-1]
+	else: 	
+		return l[len(l)//2]
