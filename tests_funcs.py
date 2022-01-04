@@ -1,5 +1,6 @@
 import funcs
 import unittest
+import math
 
 class TestFuncs(unittest.TestCase):
 
@@ -28,6 +29,12 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual(funcs.median_int([0,1,2,3]),1)
 		self.assertEqual(funcs.median_int([0,0,0,0]),0)
 		self.assertEqual(funcs.median_int([]),None)
+
+	def test_std_dev(self):
+		self.assertEqual(funcs.std_dev([1,2,5,4,3]),math.sqrt(2))
+		self.assertEqual(funcs.std_dev([-2,-1,0,1,2]),math.sqrt(2))
+		self.assertEqual(funcs.std_dev([-2,-1,0,1,2,3,4]),2)
+		self.assertEqual(funcs.std_dev([0,1,2,3]),math.sqrt(1.25))
 
 if __name__ == '__main__':
 	unittest.main()
