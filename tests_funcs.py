@@ -36,5 +36,11 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual(funcs.std_dev([-2,-1,0,1,2,3,4]),2)
 		self.assertEqual(funcs.std_dev([0,1,2,3]),math.sqrt(1.25))
 
+	def test_is_geo_progression(self):
+		self.assertEqual(funcs.is_geo_progression([1,2,5,4,3]),False)
+		self.assertEqual(funcs.is_geo_progression([-2,-1,0,1,2]),False )
+		self.assertEqual(funcs.is_geo_progression([-2,-1,0,1,2,3,4]),False)
+		self.assertEqual(funcs.is_geo_progression([1,2,4,8,16]),True)
+
 if __name__ == '__main__':
 	unittest.main()
